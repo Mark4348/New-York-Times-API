@@ -8,6 +8,22 @@ $(document).ready(function(){
         method: "GET"
       }).then(function(response) {
         console.log(response);
+
+        var headLine = response.headline;
+        var byLine = response.byline;
+        var section = response.print_section;
+        var date = response.pub_date;
+        var webURL = response.web_url;
+
+        var elements = $(`
+            <div>
+              <h4>${headLine}</h4>
+              <p>${byLine}</p>
+              <p>${section}</p>
+              <p>${date}</p>
+              <link href="${webURL}>
+            </div>
+            `)
         
       });
 
